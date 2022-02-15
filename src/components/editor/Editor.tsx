@@ -1,15 +1,25 @@
-import React, {useState} from 'react'
+import React, { useState } from 'react';
 
 import './Editor.styl';
 
 const DEFAULT_CLASSNAME = 'editor';
 const INPUT_PLACEHOLDER = 'todo text...';
 
-export const Editor: React.FC = () => {
-  const [textContent, setTextContent] = useState('');
+interface EditorComponent {
+  addNewTodo: (todoTitle: string, todoHashtags: string[]) => void;
+}
 
-  const onTextInput = (event: React.ChangeEvent<HTMLInputElement>): void => {
-    setTextContent(event.target.value);
+export const Editor: React.FC<EditorComponent> = ({ addNewTodo }) => {
+  const [textContent, setTextContent] = useState<string>('');
+
+  const newTodoHandler = () => {
+    const tags = textContent
+      .split(' ')
+      .filter((item) => item.includes('#'))
+      .map((tag) => tag.slice(1));
+
+    addNewTodo(textContent, tags);
+    setTextContent('');
   }
 
   return (
@@ -19,10 +29,10 @@ export const Editor: React.FC = () => {
         <input
           className={`${DEFAULT_CLASSNAME}__input`}
           id={'text'} value={textContent}
-          onChange={(event) => onTextInput(event)}
+          onChange={(event) => setTextContent(event.target.value)}
           placeholder={INPUT_PLACEHOLDER}
         />
-        <div className={`${DEFAULT_CLASSNAME}__btn`}>+</div>
+        <div className={`${DEFAULT_CLASSNAME}__btn`} onClick={() => newTodoHandler()}>+</div>
       </div>
     </div>
   )
