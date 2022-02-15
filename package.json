@@ -1,0 +1,40 @@
+{
+  "name": "testtask",
+  "version": "1.0.0",
+  "description": "test task - text editor with hashtags",
+  "main": "src/index.js",
+  "scripts": {
+    "watch": "webpack-dev-server --config webpack.client.js --mode development",
+    "build": "webpack --config webpack.client.js --mode production",
+    "dev": "webpack --config webpack.client.js --mode development"
+  },
+  "author": "paxom4ik",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/react": "^17.0.39",
+    "@types/react-dom": "^17.0.11",
+    "autoprefixer": "^9.8.6",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.6.0",
+    "html-webpack-plugin": "^5.5.0",
+    "postcss-csso": "^6.0.0",
+    "postcss-loader": "^6.2.1",
+    "style-loader": "^3.3.1",
+    "stylus": "^0.56.0",
+    "stylus-loader": "^6.2.0",
+    "ts-loader": "^9.2.6",
+    "typescript": "^4.5.5",
+    "uglifyjs-webpack-plugin": "^2.2.0",
+    "webpack": "^5.68.0",
+    "webpack-cli": "^4.9.2",
+    "webpack-dev-server": "^4.7.4",
+    "webpack-notifier": "^1.15.0"
+  },
+  "dependencies": {
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
