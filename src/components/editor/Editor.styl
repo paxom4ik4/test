@@ -1,0 +1,35 @@
+.editor
+  margin 20px 0
+  display flex
+  flex-direction column
+  justify-content center
+  width 320px
+
+  &__btn
+    display flex
+    justify-content center
+    align-items center
+    background-color #fff
+    width 30px
+    height 30px
+    border 1px solid #5a5a5a
+    border-radius 4px
+    transition all 0.3s
+    &:hover
+      cursor pointer
+      opacity 0.8
+
+  &__input
+    padding 0 4px
+    height 30px
+    background-color #fff
+    border-bottom 1px solid #5a5a5a
+    width calc(100% - 30px)
+    margin 0 4px 0 0
+
+    &-container
+      display flex
+      flex-direction row
+      justify-content space-between
+      align-items center
+      margin 10px 0 0

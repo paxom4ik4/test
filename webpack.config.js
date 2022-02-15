@@ -3,7 +3,7 @@ const path = require("path")
 module.exports = (env) => {
   const modules = {
     js: {
-      test: /\.ts(x?)$/,
+      test: /\.(ts|js)x?$/,
       exclude: /node_modules/,
       use: [
         {
@@ -22,11 +22,6 @@ module.exports = (env) => {
         },
         {
           loader: "stylus-loader",
-          options: {
-            import: [
-              path.resolve(__dirname, 'src/Common/Styles/variables.styl'),
-            ],
-          }
         },
       ],
     },
